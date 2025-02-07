@@ -1,6 +1,8 @@
   import axios from 'axios';
   import { client } from './sanityClient.js';
 
+ 
+
   async function uploadImageToSanity(imageUrl: string): Promise<string> {
 
     try {
@@ -44,6 +46,7 @@
             name: product.title,
             price: product.price,
             discountPercentage: product.discountPercentage || 0,
+            quantity:50,
             tags: product.category ? [product.category] : [],
             image: {
               _type: 'image',
